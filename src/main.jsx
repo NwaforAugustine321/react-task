@@ -39,14 +39,10 @@ import NotFoundPage from "./pages/NotFoundPage";
     const { state } = React.useContext(AuthContext);
 
     return (
-      <DndProvider backend={HTML5Backend}>
-        <div className='h-full'>
-          <div className='flex w-full'>
-            <div className='w-full '>{renderRoutes()}</div>
-          </div>
-          <SnackBar />
-        </div>
-      </DndProvider>
+      <div>
+        {renderRoutes()}
+        <SnackBar />
+      </div>
     );
   }
 

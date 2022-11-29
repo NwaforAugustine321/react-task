@@ -10,7 +10,7 @@ module.exports = function (app) {
   );
 
   app.use(
-    '/photos',
+    '/photos/?',
     createProxyMiddleware({
       target: 'https://unsplash.com',
       changeOrigin: true,

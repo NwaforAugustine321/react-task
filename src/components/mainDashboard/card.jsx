@@ -5,29 +5,11 @@ import { useDrag, useDrop } from 'react-dnd';
 import { ItemTypes } from '../../constants';
 import { moveKnight } from '../../main';
 
-const Card = function ({ data }) {
-  const [{ isDragging }, drag] = useDrag(() => ({
-    type: ItemTypes.CARD,
-    item: {
-      id: data?.id,
-    },
-
-    collect: (monitor) => ({
-      isDragging: !!monitor.isDragging(),
-    }),
-  }));
+const Card = function (props) {
+  const { data, movie, index } = props;
 
   return (
-    <div
-      className='movie_card'
-      ref={drag}
-      style={{
-        opacity: isDragging ? 0.5 : 1,
-        fontSize: 25,
-        fontWeight: 'bold',
-        cursor: 'move',
-      }}
-    >
+    <div className='movie_card'>
       <div className='grid_left_column'>
         <span className='movie_number'>{data?.id}</span>
         <img className='image' src={data?.photo}></img>
