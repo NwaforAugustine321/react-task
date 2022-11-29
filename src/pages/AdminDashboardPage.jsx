@@ -4,7 +4,7 @@ import Header from '../components/header/header';
 import MainDashboard from '../components/mainDashboard/mainDashboard';
 import MkdSDK from '../utils/MkdSDK';
 import ReactPaginate from 'react-paginate';
-import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
+import { DragDropContext } from 'react-beautiful-dnd';
 
 export const DragContext = React.createContext({
   rearrange: null,
