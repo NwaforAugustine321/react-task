@@ -9,17 +9,18 @@ const initialState = {
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case "SNACKBAR":
+    case 'SNACKBAR':
+      console.log('dispatch');
       return {
         ...state,
         globalMessage: action.payload.message,
       };
-    case "SETPATH":
+    case 'SETPATH':
       return {
         ...state,
         path: action.payload.path,
       };
-    case "OPEN_SIDEBAR":
+    case 'OPEN_SIDEBAR':
       return {
         ...state,
         isOpen: action.payload.isOpen,
@@ -30,9 +31,9 @@ const reducer = (state, action) => {
   }
 };
 
-export const showToast = (dispatch, message, timeout = 3000) => {
+export const showToast = (dispatch, message, timeout = 4000) => {
   dispatch({
-    type: "SNACKBAR",
+    type: 'SNACKBAR',
     payload: {
       message,
     },
@@ -40,9 +41,9 @@ export const showToast = (dispatch, message, timeout = 3000) => {
 
   setTimeout(() => {
     dispatch({
-      type: "SNACKBAR",
+      type: 'SNACKBAR',
       payload: {
-        message: "",
+        message: '',
       },
     });
   }, timeout);
