@@ -15,8 +15,9 @@ const AdminLoginPage = () => {
     })
     .required();
 
-  const { dispatch } = React.useContext(GlobalContext);
-  // const { dispatch } = React.useContext(AuthContext);
+ 
+  const { dispatch } = React.useContext(AuthContext);
+  const { dispatch: globalDispatch } = React.useContext(GlobalContext);
   const navigate = useNavigate();
   const {
     register,
@@ -43,12 +44,12 @@ const AdminLoginPage = () => {
         type: 'LOGIN',
         payload: data,
       });
-      showToast(dispatch, 'Logged in  successfully', 500);
+      showToast(globalDispatch, 'Logged in  successfully', 600);
       navigate('/', { replace: true });
       return;
     }
 
-    showToast(dispatch, 'Request failed', 500);
+    showToast(globalDispatch, 'Request failed', 500);
   };
 
   return (

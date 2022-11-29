@@ -46,13 +46,13 @@ const AdminDashboardPage = ({ x, y, children }) => {
     fetchMovies();
   }, [pageOffset, perPage]);
 
-  if (movieList.length === 0) {
-    return (
-      <div className='alert alert-warning' role='alert'>
-        No results.
-      </div>
-    );
-  }
+  // if (movieList.length === 0) {
+  //   return (
+  //     <div className='alert alert-warning' role='alert'>
+  //       No results.
+  //     </div>
+  //   );
+  // }
 
   return (
     <>

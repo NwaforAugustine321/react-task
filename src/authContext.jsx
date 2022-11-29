@@ -42,7 +42,7 @@ export const tokenExpireError = (dispatch, errorMessage) => {
 
   if (errorMessage === 'UNAUTHORIZED') {
     dispatch({
-      type: 'Logout',
+      type: 'LOGOUT',
     });
 
     window.location.href = '/' + role + '/login';
@@ -52,7 +52,7 @@ export const tokenExpireError = (dispatch, errorMessage) => {
 const AuthProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const { isAuthenticated, expire_at, role } = state;
+  const { role } = state;
 
   React.useEffect(() => {
     //TODO
