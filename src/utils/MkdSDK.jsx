@@ -106,7 +106,7 @@ export default function MkdSDK() {
         const _jsonPostData = await response.json();
 
         if (response.status != 200) {
-        alert(response.message);
+        alert('Request failed please your login credentials');
         }
 
         return _jsonPostData;
