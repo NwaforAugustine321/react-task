@@ -49,7 +49,7 @@ const AdminLoginPage = () => {
       return;
     }
 
-    showToast(globalDispatch, 'Request failed', 500);
+    showToast(globalDispatch, 'Request failed', 600);
   };
 
   return (
