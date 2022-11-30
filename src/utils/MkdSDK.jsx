@@ -106,7 +106,7 @@ export default function MkdSDK() {
         const _jsonPostData = await response.json();
 
         if (response.status != 200) {
-          throw new Error(response.message);
+        alert(response.message);
         }
 
         return _jsonPostData;
