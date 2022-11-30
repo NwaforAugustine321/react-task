@@ -1,12 +1,9 @@
-import React, { useEffect, memo } from 'react';
+import React from 'react';
 import styles from './mainDashboard.scss';
 import { AiOutlineArrowUp } from 'react-icons/ai';
-import { useDrag, useDrop } from 'react-dnd';
-import { ItemTypes } from '../../constants';
-import { moveKnight } from '../../main';
 
 const Card = function (props) {
-  const { data, movie, index } = props;
+  const { data } = props;
 
   return (
     <div className='movie_card'>

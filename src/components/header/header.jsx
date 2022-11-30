@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styles from './header.scss';
 import { BiUser } from 'react-icons/bi';
 import { AuthContext } from '../../authContext';

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState } from 'react';
 import { AuthContext } from '../authContext';
 import Header from '../components/header/header';
 import MainDashboard from '../components/mainDashboard/mainDashboard';
@@ -11,7 +11,7 @@ export const DragContext = React.createContext({
   movies: [],
 });
 
-const AdminDashboardPage = ({ x, y, children }) => {
+const AdminDashboardPage = () => {
   const { state } = React.useContext(AuthContext);
   const [movieList, setMovieList] = useState([]);
   const [pageOffset, setPageOffset] = useState(0);
@@ -37,7 +37,7 @@ const AdminDashboardPage = ({ x, y, children }) => {
       'POST',
       '/v1/api/rest/video/PAGINATE'
     );
-    const { limit, num_pages, page, total, error, list } = response;
+    const { num_pages, list } = response;
 
     setPageCount(num_pages);
     //endOffset;
@@ -56,11 +56,7 @@ const AdminDashboardPage = ({ x, y, children }) => {
     let startIndex = data.destination.index;
     let endIndex = data.source.index;
 
-    const list = movieList.splice(
-      startIndex,
-      0,
-      movieList.splice(endIndex, 1)[0]
-    );
+    movieList.splice(startIndex, 0, movieList.splice(endIndex, 1)[0]);
 
     setMovieList(movieList);
   };
